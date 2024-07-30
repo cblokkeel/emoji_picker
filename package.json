@@ -1,0 +1,40 @@
+{
+  "name": "emoji_picker",
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/emoji_picker.umd.cjs",
+  "module": "./dist/emoji_picker.js",
+  "exports": {
+    ".": {
+      "import": "./dist/emoji_picker.js",
+      "require": "./dist/emoji_picker.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "pnpm build:lib && pnpm build:style",
+    "build:lib": "vue-tsc -b && vite build",
+    "build:style": "postcss src/style.css -o dist/style.css",
+    "preview": "vite preview",
+    "types": "vue-tsc "
+  },
+  "dependencies": {
+    "vue": "^3.4.31"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.40",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.4",
+    "vue-tsc": "^2.0.24"
+  }
+}
